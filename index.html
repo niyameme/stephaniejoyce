@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Secret Number</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            width: 350px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        input {
+            padding: 8px;
+            width: 150px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Guess the Secret Number</h2>
+
+        <p>Enter a number from 1 to 10</p>
+
+        <input type="number" id="guess" min="1" max="10">
+
+        <br><br>
+
+        <button onclick="checkGuess()">Guess</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+        let secretNumber = 7;
+
+        function checkGuess() {
+
+            let guess = parseInt(document.getElementById("guess").value);
+
+            if (guess === secretNumber) {
+                document.getElementById("result").innerHTML =
+                    "Correct! You guessed the secret number!";
+            }
+
+            else if (guess < secretNumber) {
+                document.getElementById("result").innerHTML =
+                    "Too Low!";
+            }
+
+            else {
+                document.getElementById("result").innerHTML =
+                    "Too High!";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
